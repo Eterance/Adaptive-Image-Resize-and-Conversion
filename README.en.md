@@ -28,7 +28,7 @@ Note that subfolders inside the picture_folder will not be compressed recursivel
 
 ### save_folder
 
-The path to save the compressed images. If the folder does not exist, it will be created automatically. If the folder is not empty, it will output “输出文件夹不为空，请清空后重试。”（The output folder is not empty. Please clear it and try again.） and exit.
+The path to save the compressed images. If the folder does not exist, it will be created automatically. If the folder is not empty and `is_all_folder` is `True` , it will output “输出文件夹不为空，请清空后重试。”（The output folder is not empty. Please clear it and try again.） and exit.
 
 ### image_name
 

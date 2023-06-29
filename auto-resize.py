@@ -12,23 +12,23 @@ class UnderResolutionPolicy(Enum):
 
 # 必要修改：改成你的 被压缩图片 所在的文件夹
 picture_folder = r"E:\图片与视频\pixiv"
-#picture_folder = r"F:\Download"
+picture_folder = r"C:\Users\Eterance\Pictures\Cyberpunk 2077"
 # 必要修改：改成你的 压缩后图片 保存的文件夹
-save_folder = r"C:\Users\Eterance\Desktop\已压缩3"
+save_folder = r"C:\Users\Eterance\Desktop\2077"
 # 必要修改：改成你的 被压缩图片 的文件名
-image_name = "69117429.jpg"
+image_name = "photomode_11012021_160505.png"
 # 可选修改：改成你的 压缩后图片 的格式，支持 jpg、png、webp
-extension = 'jpg'
+extension = 'webp'
 # 可选修改：改成你的 压缩后图片 的后缀，例如 “-已缩小”。如果不需要后缀，改成空字符串 ""
 suffix = "-已缩小"
 # 可选修改：改成你的 压缩后图片 的质量，范围 0-100，越大越清晰，但是文件越大。推荐 90。
 _quality = 90
 # 可选修改：改成你的 压缩后图片 的目标大小上限，单位 KB。
-target_size_kb_upper = 400
+target_size_kb_upper = 4000
 # 可选修改：改成你的 压缩后图片 的目标大小下限，单位 KB。不得大于上限。
-target_size_kb_lower = 360
+target_size_kb_lower = 3600
 # 如果为 True，则会将 picture_folder 文件夹下的所有图片都压缩，忽视 image_name。
-is_all_folder = True
+is_all_folder = False
 # 仅在 is_all_folder 为 True 时生效。原图分辨率大于这个值的图片才会被压缩。如果为0，则不限制。
 width_lower_limit = 1920
 height_lower_limit = 1200
@@ -90,7 +90,7 @@ if not os.path.exists(save_folder):
     os.makedirs(save_folder, exist_ok=True)
 
 # 如果输出不为空，则结束
-if len(os.listdir(save_folder)) != 0:
+if len(os.listdir(save_folder)) != 0 and is_all_folder == True:
     print("输出文件夹不为空，请清空后重试。")
     exit()
 
